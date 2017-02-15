@@ -1,4 +1,22 @@
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+
+
+<div class="page">
+  <div class="filter">filter posts</div>
+  <a href="#"><span class="add">👋</span></a>
+  <h1 class="title">Stories</h1>
+  <h5 class="subtitle">Published near real-time from the webz</h5>
+
+
+
+    <% @posts.each do |post| %>
+      <div class="item">
+        <div class="category"></div>
+        <div class="circle" style="background-image: url(<%= post.image %>);"></div>
+
+        <a href="<%= post.url %>" target="_new"><h2 class="posttitle"><%= post.title %></h2></a>
+        <span class="metadata">Posted in <strong><%= post.category %></strong> on <em><%= post.created_at %></em></span>
+
+      </div>
+    <% end %>
+
+</div>
